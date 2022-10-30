@@ -6,6 +6,7 @@ import (
 
 	"github.com/quay/claircore/alpine"
 	"github.com/quay/claircore/dpkg"
+	"github.com/quay/claircore/golang"
 	"github.com/quay/claircore/internal/indexer"
 	"github.com/quay/claircore/java"
 	"github.com/quay/claircore/python"
@@ -81,6 +82,7 @@ func (o *Opts) Parse(ctx context.Context) error {
 			python.NewEcosystem(ctx),
 			java.NewEcosystem(ctx),
 			rhcc.NewEcosystem(ctx),
+			golang.NewEcosystem(ctx),
 		}
 	}
 	o.LayerFetchOpt = DefaultLayerFetchOpt
